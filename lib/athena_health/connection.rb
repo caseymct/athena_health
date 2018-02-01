@@ -26,6 +26,12 @@ module AthenaHealth
     def call(endpoint:, method:, params: {}, body: {}, second_call: false)
       authenticate if @token.nil?
 
+      puts "URL\t #{@base_url}/#{@version}/#{endpoint}"
+      puts "Method\t#{method}"
+      puts "Params\t#{params}"
+      puts "Body\t#{body}"
+      puts
+
       response = Typhoeus::Request.new(
         "#{@base_url}/#{@version}/#{endpoint}",
         method: method,
