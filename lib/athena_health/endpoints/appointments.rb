@@ -33,7 +33,7 @@ module AthenaHealth
         AppointmentCollection.new(response)
       end
 
-      def create_appointment_slot(practice_id:, department_id:, appointment_date:, appointment_time:, provider_id:, reason_id:, params: {})
+      def create_appointment_slot(practice_id:, department_id:, appointment_date:, appointment_time:, provider_id:, params: {})
         @api.call(
           endpoint: "#{practice_id}/appointments/open",
           method: :post,
@@ -41,8 +41,7 @@ module AthenaHealth
             departmentid: department_id,
             appointmentdate: appointment_date,
             appointmenttime: appointment_time,
-            providerid: provider_id,
-            reasonid: reason_id
+            providerid: provider_id
           )
         )
       end

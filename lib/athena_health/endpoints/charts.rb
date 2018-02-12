@@ -17,10 +17,12 @@ module AthenaHealth
       end
 
       def encounter_dictation_status(practice_id:, encounter_id:)
-        @api.call(
+        response = @api.call(
           endpoint: "#{practice_id}/chart/encounter/#{encounter_id}/dictationstatus",
           method: :get
         )
+
+        EncounterStatus.new(response)
       end
 
       def start_external_dictation(practice_id:, encounter_id:, params: {})
