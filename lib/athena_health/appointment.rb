@@ -14,6 +14,7 @@ module AthenaHealth
     attribute :duration,                    Integer
     attribute :encounterstatus,             String
     attribute :frozen,                      Boolean
+    attribute :insurances,                  Array[Insurance]
     attribute :lastmodified,                String
     attribute :patient,                     Patient
     attribute :patientappointmenttypename,  String
