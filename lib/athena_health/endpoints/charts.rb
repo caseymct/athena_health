@@ -32,6 +32,15 @@ module AthenaHealth
           body: params
         )
       end
+
+      def dictatable_sections(practice_id:, encounter_id:)
+        response = @api.call(
+          endpoint: "#{practice_id}/chart/encounter/#{encounter_id}/dictatablesections",
+          method: :get
+        )
+
+        response.fetch(:sections, [])
+      end
     end
   end
 end

@@ -12,9 +12,9 @@ module AthenaHealth
     attribute :date,                        String
     attribute :departmentid,                Integer
     attribute :duration,                    Integer
+    attribute :encounterid,                 String
     attribute :encounterstatus,             String
     attribute :frozen,                      Boolean
-    attribute :insurances,                  Array[Insurance]
     attribute :lastmodified,                String
     attribute :patient,                     Patient
     attribute :patientappointmenttypename,  String
